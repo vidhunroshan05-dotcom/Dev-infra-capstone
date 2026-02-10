@@ -1,2 +1,2 @@
 # Dev-infra-capstone
-Capstone project for dev infra
+Capstone project for dev infra so far
