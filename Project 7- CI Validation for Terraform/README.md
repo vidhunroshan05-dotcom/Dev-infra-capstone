@@ -1,0 +1,1 @@
+[![.github/workflows/terraform-ci.yml](https://github.com/vidhunroshan05-dotcom/Dev-infra-capstone/actions/workflows/terraform-ci.yml/badge.svg)](https://github.com/vidhunroshan05-dotcom/Dev-infra-capstone/actions/workflows/terraform-ci.yml)
