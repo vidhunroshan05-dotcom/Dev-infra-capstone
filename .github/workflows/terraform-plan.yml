@@ -8,7 +8,6 @@ on:
 
 jobs:
   terraform:
-    name: Terraform Plan
     runs-on: ubuntu-latest
 
     steps:
@@ -19,16 +18,19 @@ jobs:
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
+        working-directory: "Project 1-Deploy a Linux EC2 Web server using Terraform"
         run: terraform init
 
       - name: Terraform Validate
+        working-directory: "Project 1-Deploy a Linux EC2 Web server using Terraform"
         run: terraform validate
 
       - name: Terraform Plan
+        working-directory: "Project 1-Deploy a Linux EC2 Web server using Terraform"
         run: terraform plan -out=tfplan
 
       - name: Upload Plan Artifact
         uses: actions/upload-artifact@v4
         with:
           name: terraform-plan
-          path: tfplan
+          path: "Project 1-Deploy a Linux EC2 Web server using Terraform/tfplan"
