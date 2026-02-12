@@ -17,13 +17,15 @@ jobs:
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
+        working-directory: "Project 12-Infrastructure CI Trigger"
         run: terraform init
 
       - name: Terraform Plan
+        working-directory: "Project 12-Infrastructure CI Trigger"
         run: terraform plan -out=tfplan
 
       - name: Upload Plan Artifact
         uses: actions/upload-artifact@v4
         with:
           name: terraform-plan
-          path: tfplan
+          path: "Project 12-Infrastructure CI Trigger/tfplan"
