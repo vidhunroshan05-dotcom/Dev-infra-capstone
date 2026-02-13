@@ -1,8 +1,8 @@
 variable "region" {
-  default = "eu-west-1"
+  default = "ap-south-2"
 }
 
 
 variable "instance_type" {
-  default = "t2.micro"
+  default = "t3.micro"
 }
