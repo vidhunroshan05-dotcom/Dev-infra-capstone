@@ -1,31 +1,27 @@
-name: Terraform GitOps Deployment
+name: GitOps Infra Deploy
 
 on:
   pull_request:
-    branches:
-      - main
-  push:
-    branches:
-      - main
+    branches: [ main ]
+    types: [closed]
 
 jobs:
-  terraform-plan:
-    if: github.event_name == 'pull_request'
+  apply:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+    environment: production
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: hashicorp/setup-terraform@v3
-      - run: terraform init
-      - run: terraform plan
+      - name: Checkout
+        uses: actions/checkout@v4
 
-  terraform-apply:
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    needs: terraform-plan
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
 
-    steps:
-      - uses: actions/checkout@v4
-      - uses: hashicorp/setup-terraform@v3
-      - run: terraform init
-      - run: terraform apply -auto-approve
+      - name: Terraform Init
+        run: terraform init
+        working-directory: "Project 18-GitOps Infra deployment"
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+        working-directory: "Project 18-GitOps Infra deployment"
