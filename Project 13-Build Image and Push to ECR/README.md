@@ -32,5 +32,6 @@ This demonstrates how container images are published to a cloud registry for lat
 ## Outcome
 
 The Docker image is now stored securely in Amazon ECR and ready to be deployed to services such as ECS or Kubernetes.
+#
 
 ---
