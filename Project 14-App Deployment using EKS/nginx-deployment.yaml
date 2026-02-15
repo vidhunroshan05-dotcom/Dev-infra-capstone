@@ -1,19 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: project14-app
+
 spec:
-  replicas: 1
+  replicas: 2
+
   selector:
     matchLabels:
-      app: nginx
+      app: project14
+
   template:
     metadata:
       labels:
-        app: nginx
+        app: project14
+
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
-        ports:
-        - containerPort: 80
+        - name: project14-container
+          image: 399090453014.dkr.ecr.ap-south-1.amazonaws.com/project-13-ecr-repo:latest
+          ports:
+            - containerPort: 80

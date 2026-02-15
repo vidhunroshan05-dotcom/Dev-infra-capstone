@@ -1,11 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
+  name: project14-service
+
 spec:
   type: LoadBalancer
+
   selector:
-    app: nginx
+    app: project14
+
   ports:
-  - port: 80
-    targetPort: 80
+    - port: 80
+      targetPort: 80
