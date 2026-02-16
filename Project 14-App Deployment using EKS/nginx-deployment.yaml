@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: project14-app
+  name: eksctl-project14-app
 
 spec:
   replicas: 2
@@ -17,7 +17,7 @@ spec:
 
     spec:
       containers:
-        - name: project14-container
+        - name: eksctl-project14-eks-cluster-cluster
           image: 399090453014.dkr.ecr.ap-south-1.amazonaws.com/project-13-ecr-repo:latest
           ports:
             - containerPort: 80
